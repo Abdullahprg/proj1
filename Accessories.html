@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AAG Games</title>
+<style>
+  img {
+    width: 300px;
+    
+
+    float: left;
+  }
+</style>
+<p id="currentTime"></p>
+
+<script>
+    // Function to get the current time
+    function getCurrentTime() {
+        // Create a new Date object
+        var currentTime = new Date();
+
+        // Get hours, minutes, and seconds
+        var hours = currentTime.getHours();
+        var minutes = currentTime.getMinutes();
+        var seconds = currentTime.getSeconds();
+
+        // Add leading zeros if the values are less than 10
+        hours = (hours < 10 ? "0" : "") + hours;
+        minutes = (minutes < 10 ? "0" : "") + minutes;
+        seconds = (seconds < 10 ? "0" : "") + seconds;
+
+        // Format the time in HH:MM:SS format
+        var formattedTime = hours + ":" + minutes + ":" + seconds;
+
+        // Display the current time in the element with id="currentTime"
+        document.getElementById("currentTime").innerText = "Current Time: " + formattedTime;
+    }
+
+    // Call the function to display the current time
+    getCurrentTime();
+
+    // Update the time every second (1000 milliseconds)
+    setInterval(getCurrentTime, 1000);
+</script>
+
+</body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* Styles for the navigation bar */
+.navbar {
+  overflow: hidden; /* Hides any overflowing content in the navbar */
+  background-color: black; /* Sets the background color of the navbar */
+}
+
+/* Styles for the links within the navigation bar */
+.navbar a {
+  float: left; /* Floats the links to the left */
+  font-size: 30px; /* Sets the font size for the links */
+  color: #555; /* Sets the text color for the links */
+  text-align: center; /* Centers the text within the links */
+  padding: 14px 16px; /* Provides padding for the links */
+  text-decoration: overline; /* Adds an overline decoration to the text */
+}
+
+/* Styles for the dropdown container */
+.dropdown {
+  float: left; /* Floats the dropdown container to the left */
+  overflow: hidden; /* Hides any overflowing content within the dropdown */
+  text-decoration: underline; /* Adds an underline decoration to the text within the dropdown */
+}
+
+/* Styles for the dropdown button */
+.dropdown .dropbtn {
+  font-size: 15px; /* Sets the font size for the dropdown button */
+  border: none; /* Removes the border */
+  outline: none; /* Removes the outline */
+  color: gray; /* Sets the text color for the dropdown button */
+  padding: 14px 16px; /* Provides padding for the dropdown button */
+  font-family: inherit; /* Inherits the font family from the parent element */
+  margin: 0; /* Resets the margin */
+  text-decoration: overline; /* Adds an overline decoration to the text */
+}
+
+/* Styles when hovering over links or the dropdown button */
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  text-decoration-line: overline; /* Changes the line decoration to overline on hover */
+  color: purple; /* Sets the text color to purple on hover */
+  font-weight: bold; /* Makes the text bold on hover */
+}
+
+/* Styles for the dropdown content */
+.dropdown-content {
+  display: none; /* Hides the dropdown content by default */
+  position: absolute; /* Positions the dropdown content absolutely */
+  background-color: #f9f9f9; /* Sets the background color for the dropdown content */
+  min-width: 160px; /* Sets a minimum width for the dropdown content */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+  z-index: 1; /* Sets the stacking order of the dropdown content */
+}
+
+/* Styles for links within the dropdown content */
+.dropdown-content a {
+  float: none; /* Resets the float property */
+  color: gray; /* Sets the text color for links in the dropdown content */
+  padding: 12px 16px; /* Provides padding for links in the dropdown content */
+  text-decoration-color: gray; /* Sets the color for the text decoration */
+  display: block; /* Displays the links as block elements */
+  text-align: left; /* Aligns the text to the left within the links */
+  text-decoration-line: underline; /* Adds an underline decoration to the text */
+}
+
+/* Styles when hovering over links within the dropdown content */
+.dropdown-content a:hover {
+  text-decoration-color: gray; /* Sets the color for the text decoration on hover */
+}
+
+/* Display the dropdown content when hovering over the dropdown */
+.dropdown:hover .dropdown-content {
+  display: block; /* Shows the dropdown content on hover */
+}
+
+</style>
+
+  <style>
+    .vl {
+      border-left: 4px solid rebeccapurple;
+      height: 80px;
+    }
+    </style>
+     <style>
+      .vl_d {
+        border-left: 4px dotted rebeccapurple;
+        height: 270px;
+      }
+      </style>
+      <style>
+        * {box-sizing: border-box}
+        body {font-family: Verdana, sans-serif; margin:0 
+        color="white"}
+        
+        /* Slideshow container */
+        .slideshow-container {
+          position: relative;
+          background:lightslategray;
+        }
+        
+        /* Slides */
+        .mySlides {
+          display: none;
+          padding: 80px;
+          text-align: left;
+          color: #bbb;
+        }
+        
+        /* Next & previous buttons */
+        .prev, .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          width: auto;
+          margin-top: -30px;
+          padding: 16px;
+          color:gray;
+          font-weight: bold;
+          font-size: 20px;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+        }
+        
+        /* Position the "next button" to the right */
+        .next {
+          position: absolute;
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+        
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+          background-color: gray;
+          color: white;
+        }
+        
+        /* The dot/bullet/indicator container */
+        
+        
+        /* Add a background color to the active dot/circle */
+        .active, .dot:hover {
+          background-color:gray;
+        }
+        
+        /* Add an italic font style to all quotes */
+        q {font-style: italic;}
+        
+        /* Add a blue color to the author */
+        .author {color: cornflowerblue;}
+        </style>
+
+<style>
+  .boxed {
+  border: 1px solid purple;
+  color: white;
+  padding: 20px;
+  background-color: purple;
+  background-position: center;
+  text-align: center;
+  height:250px;
+  width: 1285px;
+  margin: 30px;
+  font-size: 20px; 
+}
+</style>
+<style>
+  /* (A) SHARED CLASS */
+  .box {
+    margin: 10px;
+    padding: 10px;
+    font-size: 18px;
+  }
+   
+  /* (B) BOX VARIATIONS */
+  /* (B1) INFORMATION BOX */
+  .info {
+    color:white;
+    background:lightslategray;
+    border: 1px solid burlywood;
+  }
+   
+  /* (B2) WARNING BOX */
+  .warn {
+    color: darkmagenta;
+    background: lightpink;
+    border: 1px solid darkred;
+  }
+   
+  /* (B3) SUCCESS */
+  .ok {
+    color: darkgreen;
+    background: greenyellow;
+    border: 1px solid darkgreen;
+  }
+  </style>
+  <style>
+
+      .footer-basic {
+  padding:40px 0;
+  background-color:purple;
+  color:white;
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1;
+  margin-bottom:0;
+  width: 50px;
+}
+
+.footer-basic li {
+  padding:0 8px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+}
+    </style>    
+
+</head>
+<body>
+    <body>
+      
+        <div class="navbar">
+          <img src="https://static.wixstatic.com/media/f6ad99_8e6a285700154f0888b03965e7e26721~mv2.png/v1/fill/w_274,h_406,al_c,lg_1,q_85,enc_auto/f6ad99_8e6a285700154f0888b03965e7e26721~mv2.png" style="width:250px;height:325px;">
+
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="Accessories.html">Accessories</a>
+          <a href="aboutus.html">About Us</a>
+          
+          
+          </div>
+        </div>
+        <head>
+          <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>
+             
+            * {
+              box-sizing: border-box;
+            }
+            
+            body {
+              background-color: #f1f1f1;
+              padding: 20px;
+              font-family: Arial;
+            }
+            
+            /* Center website */
+            .main {
+              max-width: 1000px;
+              margin: auto;
+            }
+            
+            h1 {
+              font-size: 50px;
+              word-break: break-all;
+            }
+            
+            .row {
+              margin: 8px -16px;
+            }
+            
+            /* Add padding BETWEEN each column */
+            .row,
+            .row > .column {
+              padding: 8px;
+            }
+            
+            /* Create four equal columns that floats next to each other */
+            .column {
+              float: left;
+              width: 25%;
+            }
+            
+            /* Clear floats after rows */ 
+            .row:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+            
+            /* Content */
+            .content {
+              background-color: white;
+              padding: 10px;
+            }
+            
+            /* Responsive layout - makes a two column-layout instead of four columns */
+            @media screen and (max-width: 900px) {
+              .column {
+                width: 50%;
+              }
+            }
+            
+            /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 600px) {
+              .column {
+                width: 100%;
+              }
+            }
+            </style>
+            </head>
+            <body>
+              <p id="currentTime"></p>
+  
+  <script>
+      // Function to get the current time
+      function getCurrentTime() {
+          // Create a new Date object
+          var currentTime = new Date();
+  
+          // Get hours, minutes, and seconds
+          var hours = currentTime.getHours();
+          var minutes = currentTime.getMinutes();
+          var seconds = currentTime.getSeconds();
+  
+          // Add leading zeros if the values are less than 10
+          hours = (hours < 10 ? "0" : "") + hours;
+          minutes = (minutes < 10 ? "0" : "") + minutes;
+          seconds = (seconds < 10 ? "0" : "") + seconds;
+  
+          // Format the time in HH:MM:SS format
+          var formattedTime = hours + ":" + minutes + ":" + seconds;
+  
+          // Display the current time in the element with id="currentTime"
+          document.getElementById("currentTime").innerText = "Current Time: " + formattedTime;
+      }
+  
+      // Call the function to display the current time
+      getCurrentTime();
+  
+      // Update the time every second (1000 milliseconds)
+      setInterval(getCurrentTime, 1000);
+  </script>
+  
+  </body>
+            
+            <!-- MAIN (Center website) -->
+            <div class="main">
+
+              <h3><center><marquee><h3 style="color:red;"> Sale! Sale! Sale! For Halloween, you can get a 50% discount on Horror Titles Such As Five Nights At Freddy's, Alien: Invasion, and Resident Evil 7. If you wear a costume, you can get a 20% discount on any game of your choice!</h3></center></marquee>    
+            
+            <h1>Hot Accessories!</h1>
+            <img src="https://media-cldnry.s-nbcnews.com/image/upload/newscms/2023_09/3596444/230228-gaming-accessories-vl-2x1.jpg" alt="best selling" style="width:100%">
+            <hr>
+            
+            
+            <h2>Top Accessories</h2>
+            <p>Below are the most common Accessories bought!</p>
+            
+            <!-- Portfolio Gallery Grid -->
+            <div class="row">
+              <div class="column">
+                <div class="content">
+                  <img src="https://i.rtings.com/assets/products/atDhHKFb/astro-a10/design-medium.jpg" alt="astroa10" style="width:235px; height:215px">
+                  <h3>Price and Specifications</h3>
+                  <p>$80. Made by Logitech, With custom-tuned ASTRO audio, flip-to-mute boom mic and an ultra-durable headband, the A10 premium wired gaming headset will get you off your couch and into the action of your favorite games.</p>
+                </div>
+              </div>
+              <div class="column">
+                <div class="content">
+                <img src="https://www.zdnet.com/a/img/resize/eae54b717b2ddbca02c03d17201cc782bb6964c1/2022/03/15/5bf3534a-c6e8-41db-b2bc-db2e59078fad/g502-lightspeed-left.jpg?auto=webp&fit=crop&height=1200&width=1200" alt="Lights" style="width:100%">
+                  <h3>Price and Specifications</h3>
+                  <p>$150. Building off the original G502's popularity, Logitech's G502 LIGHTSPEED Gaming Mouse is designed to offer a similar experience, but now wirelessly. It utilizes Logitech's HERO 25K sensor, which has a dpi range of up to 25,600 for reliable tracking, and 11 programmable buttons with support for custom commands.
+                  </p>
+                </div>
+              </div>
+              <div class="column">
+                <div class="content">
+                <img src="https://images.mmorpg.com/images/contentImages/142022/Logitech_G413_SE_Top_Down_4.jpg" style="width:227px; height:215px">
+                  <h3>Price and Specifications</h3>
+                  <p>$80. Take your gaming skills to the next level: The Logitech G413 TKL SE is a tenkeyless keyboard with gaming-first features and the durability and performance necessary to compete</p>
+                </div>
+              </div>
+              <div class="column">
+                <div class="content">
+                <img src="https://m.media-amazon.com/images/I/61rFGUpbU3L.jpg" alt="Mountains" style="width:100%">
+                  <h3>Price and Specifications</h3>
+                  <p>$30. Ultra-Large Area for Low-Sensitivity Playstyles: Designed to never run out of mouse space during high-leverage gaming, reducing the need to lift and reposition mice</p>
+                </div>
+                </div>
+  
+              
+            <!-- END GRID -->
+            </div>
+          
+             </div>
+             <body>
+              <style>
+          
+          </body>
+          </html>
+          

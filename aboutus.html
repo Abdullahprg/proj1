@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AAG Games</title>
+<style>
+  img {
+    width: 300px;
+    
+
+    float: left;
+  }
+</style>
+<p id="currentTime"></p>
+
+<script>
+    // Function to get the current time
+    function getCurrentTime() {
+        // Create a new Date object
+        var currentTime = new Date();
+
+        // Get hours, minutes, and seconds
+        var hours = currentTime.getHours();
+        var minutes = currentTime.getMinutes();
+        var seconds = currentTime.getSeconds();
+
+        // Add leading zeros if the values are less than 10
+        hours = (hours < 10 ? "0" : "") + hours;
+        minutes = (minutes < 10 ? "0" : "") + minutes;
+        seconds = (seconds < 10 ? "0" : "") + seconds;
+
+        // Format the time in HH:MM:SS format
+        var formattedTime = hours + ":" + minutes + ":" + seconds;
+
+        // Display the current time in the element with id="currentTime"
+        document.getElementById("currentTime").innerText = "Current Time: " + formattedTime;
+    }
+
+    // Call the function to display the current time
+    getCurrentTime();
+
+    // Update the time every second (1000 milliseconds)
+    setInterval(getCurrentTime, 1000);
+</script>
+
+</body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Styling for the navigation bar */
+.navbar {
+  overflow: hidden; /* Hides any content that overflows the navbar */
+  background-color: black; /* Sets the background color of the navbar */
+}
+
+/* Styling for the links within the navigation bar */
+.navbar a {
+  float: left; /* Floats the links to the left */
+  font-size: 30px; /* Sets the font size for the links */
+  color: #555; /* Sets the text color for the links */
+  text-align: center; /* Centers the text within the links */
+  padding: 14px 16px; /* Provides padding for the links */
+  text-decoration: overline; /* Adds an overline decoration to the text */
+}
+
+/* Styling for the dropdown container */
+.dropdown {
+  float: left; /* Floats the dropdown container to the left */
+  overflow: hidden; /* Hides any content that overflows the dropdown */
+  text-decoration: underline; /* Adds an underline decoration to the text within the dropdown */
+}
+
+/* Styling for the dropdown button */
+.dropdown .dropbtn {
+  font-size: 15px; /* Sets the font size for the dropdown button */
+  border: none; /* Removes the border */
+  outline: none; /* Removes the outline */
+  color: gray; /* Sets the text color for the dropdown button */
+  padding: 14px 16px; /* Provides padding for the dropdown button */
+  font-family: inherit; /* Inherits the font family from the parent element */
+  margin: 0; /* Resets the margin */
+  text-decoration: overline; /* Adds an overline decoration to the text */
+}
+
+/* Styles applied when hovering over links or the dropdown button */
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  text-decoration-line: overline; /* Changes the line decoration to overline on hover */
+  color: purple; /* Sets the text color to purple on hover */
+  font-weight: bold; /* Makes the text bold on hover */
+}
+
+/* Styling for the dropdown content */
+.dropdown-content {
+  display: none; /* Hides the dropdown content by default */
+  position: absolute; /* Positions the dropdown content absolutely */
+  background-color: #f9f9f9; /* Sets the background color for the dropdown content */
+  min-width: 160px; /* Sets a minimum width for the dropdown content */
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+  z-index: 1; /* Sets the stacking order of the dropdown content */
+}
+
+/* Styling for links within the dropdown content */
+.dropdown-content a {
+  float: none; /* Resets the float property */
+  color: gray; /* Sets the text color for links in the dropdown content */
+  padding: 12px 16px; /* Provides padding for links in the dropdown content */
+  text-decoration-color: gray; /* Sets the color for the text decoration */
+  display: block; /* Displays the links as block elements */
+  text-align: left; /* Aligns the text to the left within the links */
+  text-decoration-line: underline; /* Adds an underline decoration to the text */
+}
+
+/* Styles applied when hovering over links within the dropdown content */
+.dropdown-content a:hover {
+  text-decoration-color: gray; /* Sets the color for the text decoration on hover */
+}
+
+/* Displays the dropdown content when hovering over the dropdown */
+.dropdown:hover .dropdown-content {
+  display: block; /* Shows the dropdown content on hover */
+}
+
+</style>
+<style>
+  /* Style for a vertical line with a solid border */
+  .vl {
+    border-left: 4px solid rebeccapurple; /* Creates a solid 4px left border in 'rebeccapurple' color */
+    height: 80px; /* Sets the height of the vertical line to 80 pixels */
+  }
+
+  /* Style for a vertical line with a dotted border */
+  .vl_d {
+    border-left: 4px dotted rebeccapurple; /* Creates a dotted 4px left border in 'rebeccapurple' color */
+    height: 270px; /* Sets the height of the vertical line to 270 pixels */
+  }
+</style>
+
+<style>
+  .boxed {
+  border: 1px solid purple;
+  color: white;
+  padding: 20px;
+  background-color: purple;
+  background-position: center;
+  text-align: center;
+  height:250px;
+  width: 1285px;
+  margin: 30px;
+  font-size: 20px; 
+}
+</style>
+<style>
+  /* (A) SHARED CLASS */
+  .box {
+    margin: 10px;
+    padding: 10px;
+    font-size: 18px;
+  }
+   
+  /* (B) BOX VARIATIONS */
+  /* (B1) INFORMATION BOX */
+  .info {
+    color:white;
+    background:lightslategray;
+    border: 1px solid burlywood;
+  }
+   
+  /* (B2) WARNING BOX */
+  .warn {
+    color: darkmagenta;
+    background: lightpink;
+    border: 1px solid darkred;
+  }
+   
+  /* (B3) SUCCESS */
+  .ok {
+    color: darkgreen;
+    background: greenyellow;
+    border: 1px solid darkgreen;
+  }
+  </style>
+  <style>
+
+      .footer-basic {
+  padding:40px 0;
+  background-color:purple;
+  color:white;
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1;
+  margin-bottom:0;
+  width: 50px;
+}
+
+.footer-basic li {
+  padding:0 8px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
+}
+    </style>    
+
+</head>
+
+    <body>
+      
+        <div class="navbar">
+          <img src="https://static.wixstatic.com/media/f6ad99_8e6a285700154f0888b03965e7e26721~mv2.png/v1/fill/w_274,h_406,al_c,lg_1,q_85,enc_auto/f6ad99_8e6a285700154f0888b03965e7e26721~mv2.png" style="width:250px;height:325px;">
+
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="Accessories.html">Accessories</a>
+          <a href="aboutus.html">About Us</a>
+          </div>
+        </div>
+        
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <style>
+           
+          * {
+            box-sizing: border-box;
+          }
+          
+          body {
+            background-color: #f1f1f1;
+            padding: 20px;
+            font-family: Arial;
+          }
+          
+          /* Center website */
+          .main {
+            max-width: 1000px;
+            margin: auto;
+          }
+          
+          h1 {
+            font-size: 50px;
+            word-break: break-all;
+          }
+          
+          .row {
+            margin: 8px -16px;
+          }
+          
+          /* Add padding BETWEEN each column */
+          .row,
+          .row > .column {
+            padding: 8px;
+          }
+          
+          /* Create four equal columns that floats next to each other */
+          .column {
+            float: left;
+            width: 25%;
+          }
+          
+          /* Clear floats after rows */ 
+          .row:after {
+            content: "";
+            display: table;
+            clear: both;
+          }
+          
+          /* Content */
+          .content {
+            background-color: white;
+            padding: 10px;
+          }
+          
+          /* Responsive layout - makes a two column-layout instead of four columns */
+          @media screen and (max-width: 900px) {
+            .column {
+              width: 50%;
+            }
+          }
+          
+          /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+          @media screen and (max-width: 600px) {
+            .column {
+              width: 100%;
+            }
+          }
+          </style>
+  
+          <body>
+            <!DOCTYPE html>
+            <html class="no-js" lang="en">
+              <head>
+                <meta charset="utf-8" />
+                <meta http-equiv="x-ua-compatible" content="ie=edge" />
+                <title>About Us</title>
+                <meta name="description" content="" />
+                <meta name="viewport" content="width=device-width, initial-scale=1" />
+                
+            
+                <!-- favicon
+                ============================================ -->
+                <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+            
+                <!-- Google Fonts
+                ============================================ -->
+                <link
+                  href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700"
+                  rel="stylesheet"
+                  type="text/css"
+                />
+            
+                <!-- Style CSS
+                ============================================ -->
+                <link rel="stylesheet" href="style.css" />
+            
+                <!-- Modernizr JS
+                ============================================ -->
+                <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+                <style>
+                .breadcrumb-banner-area, .breadcrumb-banner-area {
+                  background: rgba(0, 0, 0, 0) url("img/abouttitle.jpg") no-repeat scroll center top / cover ;
+                }</style>
+                
+                <style>
+                  table {
+                    border-collapse: collapse;
+                    width: 100%;
+                  }
+                  
+                  th, td {
+                    text-align: left;
+                    padding: 8px;
+                  }
+                  
+                  tr:nth-child(even) {
+                    background-color: #D6EEEE;
+                  }
+                  </style>
+                
+                <style>
+                  .collapsible {
+                    background-color: #777;
+                    color: white;
+                    cursor: pointer;
+                    padding: 18px;
+                    width: 100%;
+                    border: none;
+                    text-align: left;
+                    outline: none;
+                    font-size: 15px;
+                  }
+                  
+                  .active, .collapsible:hover {
+                    background-color:cadetblue;
+                  }
+                  
+                  .collapsible:after {
+                    content: '\002B';
+                    color: white;
+                    font-weight: bold;
+                    float: right;
+                    margin-left: 5px;
+                  }
+                  
+                  .active:after {
+                    content: "\2212";
+                  }
+                  
+                  .content {
+                    padding: 0 18px;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.2s ease-out;
+                    background-color:whitesmoke;
+                  }
+                  </style>
+                
+              </head>
+              <body>
+                
+            
+              
+                <h3><center><marquee><h3 style="color:red;"> Sale! Sale! Sale! For Halloween, you can get a 50% discount on Horror Titles Such As Five Nights At Freddy's, Alien: Invasion, and Resident Evil 7. If you wear a costume, you can get a 20% discount on any game of your choice!</h3></center></marquee>  
+                                      
+                  <!--End of Logo Mainmenu-->
+                 
+                </header>
+                <!--End of Header Area-->
+                  <!--Breadcrumb Banner Area Start-->
+                 
+                                    <h1 class="text-center">About Us</h1>
+                                    <div class="breadcrumb-bar">
+                                        <ul class="breadcrumb">
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  <!--End of Breadcrumb Banner Area-->
+                <!--Activity Area Start-->
+                <br>
+                <br>
+                <button class="collapsible"><strong>Our Mission</strong></button>
+            <div class="content">
+              <p>Our company strives to provide everything gamers need at the right price. Everything we offer our customers-from our expansive selection of new products, to our valuable pre-owned products-is geared to deliver customer satisfaction.
+            </p>
+            </div>
+            <button class="collapsible">Our Vision</button>
+            <div class="content">
+              <p>At AAG Skills, our vision is to pioneer a gaming universe that transcends boundaries, ignites imaginations, and connects players worldwide through innovative, immersive, and inclusive gaming experiences. We strive to be the beacon of creativity, pushing the boundaries of technology and storytelling, to craft games that inspire, entertain, and leave a lasting impact on the gaming industry. Our vision is to foster a community where every player finds their place, where fun and innovation harmoniously converge, setting new standards for interactive entertainment."</p>
+            </div>
+            <button class="collapsible">Our Beliefs</button>
+            <div class="content">
+              <p>Passion for Play: We believe in the power of gaming to inspire, entertain, and bring joy to people's lives. Our commitment is fueled by a genuine passion for creating exceptional gaming experiences that captivate and engage our players.
+            
+              Innovation as a Driving Force: Innovation is our heartbeat. We believe in pushing the boundaries of gaming through cutting-edge technology, creative storytelling, and revolutionary game design. We continuously strive to set new standards and surprise our players.
+            
+              Community Collaboration: We value the diverse community of players and understand the importance of their voices. We believe in fostering a welcoming and inclusive environment where collaboration and feedback are not only welcomed but embraced as a pivotal part of our development process.</p>
+            </div>
+            <button class="collapsible">Our Values</button>
+            <div class="content">
+              <p>At AAG Games, our values define who we are, what we stand for, and how we operate. They are the guiding principles that steer our decisions, actions, and interactions within our company and the gaming community:
+            <ol>
+              <li>Sincerity</li>
+              <li>Trustworthiness</li>
+              <li>Collaboration</li>
+            <li>Courage</li>
+            <li>Patience</li>
+            <li>Innovation</li>
+            <li>Creativity</li>
+            </ol>  
+            </p>
+            
+            <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            
+            for (i = 0; i < coll.length; i++) {
+              coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight){
+                  content.style.maxHeight = null;
+                } else {
+                  content.style.maxHeight = content.scrollHeight + "px";
+                } 
+              });
+            }
+            </script>
+            </div>
+            <br>
+            <br>
+            <br>
+            
+                <!--End of Activity Area-->
+                <!--About Area Start-->
+                <div class="about-area section-padding-bottom">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="section-title-wrapper">
+                          <div class="section-title">
+                            <div class="square"> 
+                              <div class="skill-image">
+                                <img src="https://static.wixstatic.com/media/f6ad99_0737b8348366453c95ea574acd8158e4~mv2.jpg/v1/fill/w_534,h_631,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/387494343_1661917840962719_1798455755632757310_n_edited.jpgg" width="150" height="250">
+                              </div>
+                            <h3>Founder's Message</h3>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="about-text-container">
+                          <p>
+                            <span>At AAG Games, our games are renowned for their unique storytelling, cutting-edge technology, and a steadfast dedication to putting players at the center. We take great pride in actively engaging with our gaming community, valuing their feedback and integrating it into our game development process. This approach enables us to create titles that resonate across diverse gaming preferences while ensuring top-tier gaming experiences.<br>
+                     
+                              At AAG Games, our mission is to redefine the gaming landscape. We strive to create not just games, but experiences that resonate with our players on a profound level. Our team is committed to pushing the boundaries of innovation, embracing new technologies, and weaving captivating stories into every game we develop.
+                            
+                             Warmly,<br>
+                                
+                              Abdullah, Angad, Gurkirat<br>
+                                Head, AAG Games<br>
+                            
+                          </p>
+                          <div class="about-us">
+                            
+                          </div>
+                          
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                       
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="about-area section-padding-bottom">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="section-title-wrapper">
+                          
+                          <div class="section-title">
+                            <div class="skill-image">
+                              <img src="data:image/jpeg;base64,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" width="200" height="250">
+                            </div>
+                            <h3>What we stand for?</h3>
+                            
+                      
+                          <p>
+                            <span>AAG Games is not just about creating fun; it's about creating responsible, inclusive, and ethical fun. We take pride in fostering an environment where gaming is not only an enjoyable escape but also a space that encourages responsible gaming habits.
+            We are not just here to meet industry standards; we are here to set them. Our team's collaborative spirit, adaptability, and commitment to learning enable us to constantly evolve, innovate, and anticipate the changing needs of our players.<br>
+                          
+                              As the CEOs of AAG Games, we're excited about the future. We're committed to creating games that not only entertain but also leave a lasting impact, making a mark on the industry and in the lives of our players."
+                            We look forward to seeing you all !<br>
+                                Sincerely,<br>
+                               Abdullah, Angad, Gurkirat<br>
+                                CEO, AAG Games<br>
+                            
+                          </p>
+                          <div class="about-us">
+                            
+                          </div>
+                          
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--End of About Area-->
+                <!--Skill And Experience Area Start-->
+                <div class="skill-and-experience-area">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="section-title-wrapper">
+                          <div class="section-title">
+                            <h3>AAG Games Schedule, Timings and Important days</h3>
+                            <p>Store Information</p>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                      
+                               <div style="float: left; width: 33%; overflow: auto;">
+                                   <table style="width: 400px; background-color: palegoldenrod;">
+                                 <table border="3">
+                         
+                         
+                                       <tr>
+                                      
+                                          <th>CEO</th>
+                                          <td>Abdullah Muhammad</td>
+                                      </tr>
+                                           <td>Sales Executive</td>
+                                           <td>Gurkirat Ater</td>
+                                       </tr>
+                                       <tr>
+                                           <td>Marketing Executive</td>
+                                           <td>Angad Benipal</td>
+                                       </tr>
+                                       
+                                   </table>
+                               </div>
+                   
+                               <div style="float: left; width: 33%; overflow: auto;">
+                                   <table style="width: 400px; background-color: grey;">
+                                 <table border="3">
+                                  
+                                       <tr>
+                                           <td>Date Founded</td>
+                                           <td>October 30,2023</td>
+                                       </tr>
+                                       <tr>
+                                           <td>Currently Aceepting For Jobs?</td>
+                                           <td>Yes</td>
+                                       </tr>
+                                         <tr>
+                                           <td>Programs</td>
+                                           <td>Coming soon...</td>
+                                       </tr>
+                                        
+                                   </table>
+                               </div>
+                              
+                   <div style="float: left; width: 33%; overflow: auto;">
+                                   <table style="width: 400px; background-color: grey;">
+                                 <table border="3">
+                        
+                                       <tr>
+                                           <td>Events</td>
+                                           <td>Time</td>
+                                           <td>Date</td>
+                                       </tr>
+                                       <tr>
+                                           <td>Esports Battlefront PVP</td>
+                                           <td>3pm-7pm</td>
+                                           <td>November 17, 2023</td>
+                                       </tr>
+                                       <tr>
+                                        <td>Logitech Mouse GIVEAWAY!!</td>
+                                        <td>2pm-4pm is when draw takes place</td>
+                                        <td>December 31, 2023</td>
+                                    </tr>
+                                    
+                
+                                       
+                                   </table>
+                               </div>
+                               
+                           </div> 
+                           
+                    
+                </div>
+                <br>
+            
+                
+            
+                <div class="teachers-column-carousel-area section-padding">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="section-title-wrapper">
+                          <div class="section-title">
+                            <br>
+                            <h3>Safety & Security</h3>
+                            
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                           <p> 
+                            AAG Games ensure:
+                             To provide safe & secure environment for all employees and customers
+                                <br>
+                            Trained security teams
+                                <br>
+                            Regular Employee Checks
+                                <br>
+                            Regular emergency drills
+                              
+                            Compliance with all safety requirements are strictly monitored by our Department of Gaming and Quality Assurance (SIQA).
+                          </p>
+                          <br>
+                          <br>
+                          <h2>AAG Games Promotional Video</h2>
+                          <iframe width="944" height="531" src="https://www.youtube.com/embed/VU4wtMoPy08" title="Computer science Website Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                          
+                </div>
+                
+            
+                   </div>
+                   <body>
+                    <style>
+                
+                </body>
+                </html>
+          
+          </body>
+          </html>
+          

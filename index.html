@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AAG Games</title>
+<style>
+  img {
+    width: 300px;
+    
+
+    float: left;
+  }
+</style>
+<p id="currentTime"></p>
+
+<script>
+    // Function to get the current time
+    function getCurrentTime() {
+        // Create a new Date object
+        var currentTime = new Date();
+
+        // Get hours, minutes, and seconds
+        var hours = currentTime.getHours();
+        var minutes = currentTime.getMinutes();
+        var seconds = currentTime.getSeconds();
+
+        // Add leading zeros if the values are less than 10
+        hours = (hours < 10 ? "0" : "") + hours;
+        minutes = (minutes < 10 ? "0" : "") + minutes;
+        seconds = (seconds < 10 ? "0" : "") + seconds;
+
+        // Format the time in HH:MM:SS format
+        var formattedTime = hours + ":" + minutes + ":" + seconds;
+
+        // Display the current time in the element with id="currentTime"
+        document.getElementById("currentTime").innerText = "Current Time: " + formattedTime;
+    }
+
+    // Call the function to display the current time
+    getCurrentTime();
+
+    // Update the time every second (1000 milliseconds)
+    setInterval(getCurrentTime, 1000);
+</script>
+
+</body>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: black;
+}
+
+/* Style the links inside the navigation bar */
+.navbar a {
+  float: left;
+  font-size: 30px;
+  color: #555;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: overline; /* Overlined text */
+}
+
+/* Create a dropdown button */
+.dropdown {
+  float: left;
+  overflow: hidden;
+  text-decoration: underline; /* Underlined text */
+}
+
+/* Style the dropdown button */
+.dropdown .dropbtn {
+  font-size: 15px;
+  border: none;
+  outline: none;
+  color: gray;
+  padding: 14px 16px;
+  font-family: inherit;
+  margin: 0;
+  text-decoration: overline; /* Overlined text */
+}
+
+/* Add a purple color to links and set text decoration to overline when hovering */
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  text-decoration-line: overline; /* Overlined text on hover */
+  color: purple;
+  font-weight: bold;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: gray;
+  padding: 12px 16px;
+  text-decoration-color: gray; /* Text color for underline */
+  display: block;
+  text-align: left;
+  text-decoration-line: underline; /* Underlined text */
+}
+
+/* Add an underline effect on links inside the dropdown on hover */
+.dropdown-content a:hover {
+  text-decoration-color: gray; /* Text color for underline on hover */
+}
+
+/* Display the dropdown content when hovering over the dropdown button */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+}
+</style>
+
+  <style>
+    .vl {
+      border-left: 4px solid rebeccapurple;
+      height: 80px;
+    }
+    </style>
+     <style>
+      .vl_d {
+        border-left: 4px dotted rebeccapurple;
+        height: 270px;
+      }
+      </style>
+      <style>
+        * {box-sizing: border-box}
+        body {font-family: Verdana, sans-serif; margin:0 
+        color="white"}
+        
+        /* Slideshow container */
+        .slideshow-container {
+          position: relative;
+          background:rgb(0, 119, 128);
+        }
+        
+        /* Slides */
+        .mySlides {
+          display: none;
+          padding: 80px;
+          text-align: left;
+          color: #bbbbbb;
+        }
+        
+        /* Next & previous buttons */
+        .prev, .next {
+          cursor: pointer;
+          position: absolute;
+          top: 50%;
+          width: auto;
+          margin-top: -30px;
+          padding: 16px;
+          color:gray;
+          font-weight: bold;
+          font-size: 20px;
+          border-radius: 0 3px 3px 0;
+          user-select: none;
+        }
+        
+        /* Position the "next button" to the right */
+        .next {
+          position: absolute;
+          right: 0;
+          border-radius: 3px 0 0 3px;
+        }
+        
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+          background-color: gray;
+          color: white;
+        }
+        
+        /* The dot/bullet/indicator container */
+        
+        
+        /* Add a background color to the active dot/circle */
+        .active, .dot:hover {
+          background-color:gray;
+        }
+        
+        /* Add an italic font style to all quotes */
+        q {font-style: italic;}
+        
+        /* Add a blue color to the author */
+        .author {color: cornflowerblue;}
+        </style>
+
+<style>
+  .boxed {
+  border: 1px solid rgb(0, 119, 128);
+  color: white;
+  padding: 25px;
+  background-color: rgb(0, 119, 128);
+  background-position: center;
+  text-align: center;
+  height:250px;
+  width: 1500px;
+  margin: 3px;
+  font-size: 20px; 
+}
+</style>
+<style>
+  /* (A) SHARED CLASS */
+  .box {
+    margin: 10px;
+    padding: 10px;
+    font-size: 18px;
+  }
+   
+  /* (B) BOX VARIATIONS */
+  /* (B1) INFORMATION BOX */
+  .info {
+    color:white;
+    background:lightslategray;
+    border: 1px solid burlywood;
+  }
+   
+  /* (B2) WARNING BOX */
+  .warn {
+    color: darkmagenta;
+    background: lightpink;
+    border: 1px solid darkred;
+  }
+   
+  /* (B3) SUCCESS */
+  .ok {
+    color: darkgreen;
+    background: greenyellow;
+    border: 1px solid darkgreen;
+  }
+  </style>
+  <style>
+    .parallax {
+      /* The image used */
+      background-image: url("https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_39/3509143/210929-gaming-front-seo-2x1.jpg");
+    
+      /* Set a specific height */
+      min-height: 500px; 
+    
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    </style>
+    <style>
+      .parallax2 {
+        /* The image used */
+        background-image: url("https://i.etsystatic.com/23665971/r/il/4bcce4/3445693810/il_fullxfull.3445693810_m4vj.jpg");
+      
+        /* Set a specific height */
+        min-height: 500px; 
+      
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      </style>
+      <style>
+        .parallax3 {
+          /* The image used */
+          background-image: url("https://imageio.forbes.com/specials-images/imageserve/64aceb40d0ea591fa2edfb01/Two-Technology-Trends-Shaping-The-Future-Of-Gaming/960x0.jpg?height=398&width=711&fit=bounds");
+        
+          /* Set a specific height */
+          min-height: 500px; 
+        
+          /* Create the parallax scrolling effect */
+          background-attachment: fixed;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          
+        }
+      </style>
+    <style>
+      .footer-basic {
+  padding:40px 0;
+  background-color:rgb(0, 128, 119);
+  color:white;
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1;
+  margin-bottom:0;
+  width: 50px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: black;
+}
+
+/* Style the links inside the navigation bar */
+.navbar a {
+  float: left;
+  font-size: 30px;
+  color: #555;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: overline; /* Overlined text */
+}
+
+/* Create a dropdown button */
+.dropdown {
+  float: left;
+  overflow: hidden;
+  text-decoration: underline; /* Underlined text */
+}
+
+/* Style the dropdown button */
+.dropdown .dropbtn {
+  font-size: 15px;
+  border: none;
+  outline: none;
+  color: gray;
+  padding: 14px 16px;
+  font-family: inherit;
+  margin: 0;
+  text-decoration: overline; /* Overlined text */
+}
+
+/* Add a purple color to links and set text decoration to overline when hovering */
+.navbar a:hover,
+.dropdown:hover .dropbtn {
+  text-decoration-line: overline; /* Overlined text on hover */
+  color: purple;
+  font-weight: bold;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* Style the links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: gray;
+  padding: 12px 16px;
+  text-decoration-color: gray; /* Text color for underline */
+  display: block;
+  text-align: left;
+  text-decoration-line: underline; /* Underlined text */
+}
+
+/* Add an underline effect on links inside the dropdown on hover */
+.dropdown-content a:hover {
+  text-decoration-color: gray; /* Text color for underline on hover */
+}
+
+/* Display the dropdown content when hovering over the dropdown button */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+}
+    </style>    
+
+</head>
+<body>
+    <body>
+      
+        <div class="navbar">
+          <img src="https://static.wixstatic.com/media/f6ad99_8e6a285700154f0888b03965e7e26721~mv2.png/v1/fill/w_274,h_406,al_c,lg_1,q_85,enc_auto/f6ad99_8e6a285700154f0888b03965e7e26721~mv2.png" style="width:250px;height:325px;">
+
+          <a href="index.html">Home</a>
+          <a href="products.html">Products</a>
+          <a href="Accessories.html">Accessories</a>
+          <a href="aboutus.html">About Us</a>
+          <br>
+          <br>
+          <br>
+          <br>
+          <h2><center><h2 style="color:red;">Where Legends Begin!</center></h2>
+          <h2><center><marquee><h2 style="color:cyan;"> Want to be like them? Join us!</h2></center></marquee>
+          <br>
+          <h3><center><marquee><h3 style="color:red;"> Sale! Sale! Sale! For Halloween, you can get a 50% discount on Horror Titles Such As Five Nights At Freddy's, Alien: Invasion, and Resident Evil 7. If you wear a costume, you can get a 20% discount on any game of your choice!</h3></center></marquee> 
+          <img src="https://i2-prod.walesonline.co.uk/incoming/article27530324.ece/ALTERNATES/s615/0_GettyImages-1515206215.jpg" alt="Legends" style="width:350px;height:230px;">
+          <img src="https://media.wired.com/photos/5d43581662f8060009722d51/125:94/w_2393,h_1800,c_limit/culture_replay_ninja_1054462188.jpg" alt="Legends" style="height:230px">
+          <img src="https://i.kym-cdn.com/entries/icons/facebook/000/045/479/nickeh30.jpg " alt="Legends" style="width:450px;height:230px;">
+          <img src="data:image/jpeg;base64,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" alt="Legends" style="width:400px;height:230px;">
+          </div>
+        </div>
+
+    
+        <div class="parallax"></div>
+          <table>
+            <tr>
+              <td><img src="https://media.gq-magazine.co.uk/photos/645b5c3c8223a5c3801b8b26/16:9/w_2560%2Cc_limit/100-best-games-hp-b.jpg" alt="to" width="75" height="200"></td>
+              <td><div class="vl"></div></td>
+              
+              <td><font color=PURPLE><font size="5"></font-size><strong>AAG Games</strong></font></font-size></strong><br><br>Where Legends Begin</td>
+              <td><div class="vl_d"></div></td>
+              <br>
+              
+              <td><font color=PURPLE font size="5">AAG GAMES <br> What we do?</font>
+              <br>
+              <br>
+              
+              
+          <font ="justify">Our company strives to provide everything gamers need at the right price. Everything we offer our customers-from our expansive selection of new products, to our valuable pre-owned products-is geared to deliver customer satisfaction.
+          </font><br><br>
+          
+          <span>&#9881;</span>Consoles<br>
+          <span>&#9881;</span>Video Games<br>
+            <span>&#9881;</span>Top discounts<br>
+            <span>&#9881;</span>Computer Accessories<br>
+            <span>&#9881;</span>Newest Games at the lowest prices<br>
+            
+           </td>   </tr>
+          </table>
+          <div class="slideshow-container">
+                
+            <div class="mySlides">
+            <h1 style="text-align: center;"><strong><font color="black" size="16">What Inspired Us?</font></strong></h1>
+
+            <p style="color:rgba(0, 0, 0, 0.881)">Dear valued customer,
+              <br>
+
+                We were inspired to start a video gaming business by a combination of our passion for gaming and a recognition of the immense growth and potential in the industry. As avid gamers ourselves, we've always been deeply immersed in the gaming world, from our childhoods to the present day. This passion fueled our desire to create something that not only resonated with us personally but also catered to the needs and desires of the broader gaming community.
+                In addition to our personal connection to gaming, we couldn't ignore the incredible market opportunities that were emerging. 
+T               he gaming industry had been experiencing explosive growth for several years, with an ever-expanding global audience and an increasing demand for innovative gaming experiences. This surge in interest, combined with advancements in technology, provided a fertile ground for us to bring our vision to life.
+                ​<br>
+                
+                Sincerely,<br>
+                
+                AAG Games</p>
+              
+            </div>
+            
+          
+          
+          <!-- Previous slide button. Invokes 'plusSlides' function with parameter -1 -->
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+
+<!-- Next slide button. Invokes 'plusSlides' function with parameter 1 -->
+<a class="next" onclick="plusSlides(1)">❯</a>
+</div> <!-- Closing div tag -->
+
+<!-- Container for slide navigation dots -->
+<div class="dot-container">
+  <!-- Each span corresponds to a dot and triggers 'currentSlide' function -->
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+</div> <!-- Closing div tag -->
+
+<script>
+// Variable to keep track of the current slide being displayed
+var slideIndex = 1;
+
+// Function to show the slides based on the slide index
+showSlides(slideIndex);
+
+// Function to navigate to the previous or next slide
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Function to navigate to a specific slide
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+// Function to display the slides and manage their visibility
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides"); // Fetch all slides
+  var dots = document.getElementsByClassName("dot"); // Fetch all navigation dots
+
+  if (n > slides.length) {  // Reset slide index if it exceeds the number of slides
+    slideIndex = 1;
+  }    
+
+  if (n < 1) {  // Set slide index to the last slide if less than 1
+    slideIndex = slides.length;
+  }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  // Hide all slides
+  }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");  // Remove 'active' class from dots
+  }
+
+  slides[slideIndex - 1].style.display = "block";  // Display the current slide
+  dots[slideIndex - 1].className += " active";  // Mark the current dot as active
+}
+</script>
+
+            </script>
+            
+            <div class="parallax2"></div>
+              <div class="boxed">
+                Hours of Operation<br>For up to date information please click here.<br>
+                <table>
+                    <tr>
+                      <th>Day</th>
+                      <th>Opening Hours</th>
+                    </tr>
+                    <tr>
+                      <td>Monday</td>
+                      <td>9AM-7PM</td>
+                    </tr>
+                    <tr>
+                      <td>Tuesday</td>
+                      <td>9AM-7PM</td>
+                    </tr>
+                    <tr>
+                      <td>Wednesday</td>
+                      <td>9AM-7PM</td>
+                    </tr>
+                    <tr>
+                      <td>Thursday</td>
+                      <td>9AM-7PM</td>
+                    </tr>
+                    <tr>
+                      <td>Friday</td>
+                      <td>9AM-7PM</td>
+                    </tr>
+                  
+
+</table>
+             </div>
+<div class="parallax3"></div>
+<div class="box info">
+<h1><font align="justify">  <center>What makes us different?</center></h1><br>
+ <font align="justify" <center> WHERE LEGENDS BEGIN:
+Yes, you heard it we live by our logo, we are gamers at heart. Our team is driven by a genuine love for video games, and this passion is reflected in every aspect of our business. We don't just create games; 
+we live and breathe them, ensuring that our products and services are authentic and resonate with our fellow gamers.We are committed to pushing the boundaries of what gaming can be. 
+We are constantly seeking new ways to innovate and bring fresh, exciting experiences to our audience. Whether it's through unique game mechanics, storytelling, or cutting-edge technology, we strive to be at the forefront of gaming innovation.</center></font>
+</div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.4243199984335!2d-79.69619932407909!3d43.74328464660018!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b3c5541003725%3A0x2db60023c9fdb85b!2sGameStop!5e0!3m2!1sen!2sca!4v1698187509570!5m2!1sen!2sca" width="1800" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<h1><center><FONT COLOR="gray">HOW TO FIND US </center></FONT></h1>    
+<font ="justify"><center>Our clinic is found at Brampton on Airport Road and Queen Street.
+<br><br>
+<strong>8995 Airport Rd, Brampton, ON L6T 5T2<br>
+
+​
+
+Tel: 905-355-3300<br>
+
+Fax: 905-355-3301<br>
+
+Email: aaggames07@aaggamesstore.ca</center></font></strong>
+<div class="footer-basic">
+  
+  <footer>
+    <!-- Styling for the overall dark footer -->
+    <style>
+        .footer-dark {
+            padding: 50px 0; /* Setting internal padding for the footer */
+            color: #f0f9ff; /* Text color for the footer */
+            background-color: #282d32; /* Background color of the footer */
+        }
+        
+        .footer-dark h3 {
+            margin-top: 0; /* Top margin for the heading */
+            margin-bottom: 12px; /* Bottom margin for the heading */
+            font-weight: bold; /* Bold font for the heading */
+            font-size: 16px; /* Font size for the heading */
+        }
+        
+        .footer-dark ul {
+            padding: 0; /* Resetting padding for the unordered list */
+            list-style: none; /* Removing bullet points from the list */
+            line-height: 1.6; /* Spacing between lines in the list */
+            font-size: 14px; /* Font size for the list items */
+            margin-bottom: 0; /* Bottom margin for the unordered list */
+        }
+        
+        .footer-dark ul a {
+            color: inherit; /* Inheriting link color */
+            text-decoration: none; /* Removing default underline from links */
+            opacity: 0.6; /* Setting initial opacity for links */
+        }
+        
+        .footer-dark ul a:hover {
+            opacity: 0.8; /* Changing opacity when link is hovered */
+        }
+        
+        @media (max-width:767px) {
+            .footer-dark .item:not(.social) {
+                text-align: center; /* Centering non-social items in smaller screens */
+                padding-bottom: 20px; /* Adding padding at the bottom */
+            }
+        }
+        
+        .footer-dark .item.text {
+            margin-bottom: 36px; /* Bottom margin for text items */
+        }
+        
+        @media (max-width:767px) {
+            .footer-dark .item.text {
+                margin-bottom: 0; /* Removing bottom margin for text items in smaller screens */
+            }
+        }
+        
+        .footer-dark .item.text p {
+            opacity: 0.6; /* Setting opacity for paragraph text */
+            margin-bottom: 0; /* Removing bottom margin for paragraphs */
+        }
+        
+        .footer-dark .item.social {
+            text-align: center; /* Centering social items */
+        }
+        
+        @media (max-width:991px) {
+            .footer-dark .item.social {
+                text-align: center; /* Centering social items in smaller screens */
+                margin-top: 20px; /* Adding top margin */
+            }
+        }
+        
+        .footer-dark .item.social > a {
+            font-size: 20px; /* Font size for social media icons */
+            width: 36px; /* Width of the icons */
+            height: 36px; /* Height of the icons */
+            line-height: 36px; /* Line height for centering icons */
+            display: inline-block; /* Displaying icons as inline blocks */
+            text-align: center; /* Centering text within icons */
+            border-radius: 50%; /* Creating rounded icons */
+            box-shadow: 0 0 0 1px rgba(255,255,255,0.4); /* Adding a subtle shadow to icons */
+            margin: 0 8px; /* Margin around icons */
+            color: #fff; /* Color for icon text */
+            opacity: 0.75; /* Initial opacity for icons */
+        }
+        
+        .footer-dark .item.social > a:hover {
+            opacity: 0.9; /* Changing opacity when icon is hovered */
+        }
+        
+        .footer-dark .copyright {
+            text-align: center; /* Centering copyright text */
+            padding-top: 24px; /* Top padding for the copyright text */
+            opacity: 0.3; /* Initial opacity for copyright text */
+            font-size: 13px; /* Font size for the copyright text */
+            margin-bottom: 0; /* Removing bottom margin for the copyright text */
+        }
+    </style>
+</footer>
+
+   </style>
+   <div class="footer-basic">
+     <footer>
+       <div class="footer-dark">
+         <footer>
+             <div class="container">
+                 <div class="row"><div class="col-md-3 item">
+    
+   </div><div class="col-md-3 item">
+     <table>
+       <tr>
+       <td><a href="index.html">Home</td></a>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td><a href="products.html">Products</td></a>  
+         <td></td>
+       <td></td>
+       <td></td>
+       <td><a href="Accessories.html">Accessories</td></a>  
+       <td></td>
+       <td></td>
+       <td></td>
+       <td><a href="aboutus.html">About Us</td></a>  
+       </tr>
+      
+       
+     </table>
+     
+    
+   </div><div class="col-md-3 item">
+     
+   </div><div class="col-md-3 item text">
+    
+   </div>
+   
+                     <div class="col item social"><a href="https://twitter.com/AAG__Games"><i class="fa fa-twitter"></i></a><a href="https://www.youtube.com/channel/UCEwVREaXAeGqKya2qZoEqOA"><i class="fa fa-youtube"></i></a><a href="https://www.instagram.com/aag_games_/"><i class="fa fa-instagram"></i></a></div>
+                 </div>
+                 
+                 <p class="copyright">AAG Games &copy; 2023</p>
+             </div>
+         </footer>
+     </div>
+     <body>
+      <style>
+  body {font-family: Arial, Helvetica, sans-serif;}
+  * {box-sizing: border-box;}
+  
+  /* Button used to open the chat form - fixed at the bottom of the page */
+  .open-button {
+    background-color: #555555;
+    color: rgb(255, 255, 255);
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 280px;
+  }
+  
+  /* The popup chat - hidden by default */
+  .chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 6px solid #f1f1f1;
+    z-index: 9;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  /* Full-width textarea */
+  .form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 200px;
+  }
+  
+  /* When the textarea gets focus, do something */
+  .form-container textarea:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit/send button */
+  .form-container .btn {
+    background-color: #1204aa;
+    color: rgb(255, 255, 255);
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;7
+  }
+  
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: rgb(30, 255, 0);
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+  </style>
+  </head>
+  <body>
+  
+
+  <button class="open-button" onclick="openForm()">Chat</button>
+  
+  <div class="chat-popup" id="myForm">
+    <form action="/action_page.php" class="form-container">
+      <h1>Chat</h1>
+  
+      <label for="msg"><b>Message</b></label>
+      <textarea placeholder="Type message.." name="msg" required></textarea>
+  
+      <button type="submit" class="btn">Send</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      
+    </form>
+  </div>
+  
+  <script>
+  function openForm() {
+    document.getElementById("myForm").style.display = "block";
+  }
+  
+  function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+  }
+  </script>
